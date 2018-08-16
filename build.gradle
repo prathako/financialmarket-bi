@@ -1,0 +1,65 @@
+group 'com.financialmarket'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    ext {
+        slf4j = '1.7.14'
+        slf4log4j12 = '1.7.7'
+        sqlserver = '6.2.2.jre8'
+        sparkjava = '2.6.0'
+        boonjson = '0.34'
+        sql2o = '1.5.4'
+        log4j = '1.2.17'
+        hickari = '2.4.3'
+        guice = '4.1.0'
+        apachecommons = '3.0'
+        apachecommons_new = '4.0'
+        httpclient = '4.5.3'
+        guicebinding = '4.1.0'
+        liquibase = '3.5.1'
+        reactivejx = '1.2.9'
+        junit = '4.12'
+        mockito = '1.10.19'
+        bouncyCastleFipsVersion = '1.0.0'
+        restassured = '3.0.6'
+        hamcrest = '1.3'
+    }
+
+    compile "org.slf4j:slf4j-api:${slf4j}"
+    compile "org.slf4j:slf4j-log4j12:${slf4log4j12}"
+    compile "com.sparkjava:spark-core:${sparkjava}"
+    compile "io.fastjson:boon:${boonjson}"
+    compile "org.sql2o:sql2o:${sql2o}"
+    compile "log4j:log4j:${log4j}"
+    compile "com.zaxxer:HikariCP:${hickari}"
+    compile "com.google.inject:guice:${guice}"
+    compile "org.apache.commons:commons-lang3:${apachecommons}"
+    compile "org.apache.commons:commons-collections4:${apachecommons_new}"
+    compile "org.apache.httpcomponents:fluent-hc:${httpclient}"
+    compile "com.google.inject.extensions:guice-multibindings:${guicebinding}"
+    compile "org.liquibase:liquibase-core:${liquibase}"
+    compile "com.microsoft.sqlserver:mssql-jdbc:${sqlserver}"
+    compile "io.reactivex:rxjava:${reactivejx}"
+    compile "com.automationanywhere:controlroom-jwt-validation:1.0.0-SNAPSHOT"
+    compile "org.bouncycastle:bc-fips:${bouncyCastleFipsVersion}"
+    compile "org.bouncycastle:bcpkix-fips:${bouncyCastleFipsVersion}"
+    compile group: 'org.atmosphere', name: 'wasync', version: '2.1.5'
+
+
+    testCompile "junit:junit:${junit}"
+    testCompile "org.mockito:mockito-core:${mockito}"
+    testCompile "io.rest-assured:rest-assured:${restassured}"
+    testCompile "org.hamcrest:hamcrest-all:${hamcrest}"
+}
+
+//applicationDistribution.from("src/main/resources/") {
+//    into "bin/src/main/resources"
+//}
